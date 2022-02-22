@@ -23,7 +23,7 @@ const addBook = async (req, res) => {
 // 2. get all books
 const getAllBooks = async (req, res) => {
     let books = await Book.findAll({})
-    if (books) {
+    if (books.length>1) {
         res.status(200).send(books)
         return
     }
